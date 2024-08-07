@@ -98,7 +98,9 @@ wp_reset_postdata();
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		margin-top: 5%;
+		margin-top: 5% !important;
+		justify-items: center;
+		align-items: center;
 	}
 
 	.card {
@@ -158,6 +160,11 @@ wp_reset_postdata();
 		font-size: 20px;
 		cursor: pointer;
 		margin-left: auto;
+	}
+
+	.add-to-cart:hover {
+		background-color: white;
+		color: black;
 	}
 
 	.solution-categories {
