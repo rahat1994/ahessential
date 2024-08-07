@@ -61,7 +61,7 @@ if ($query->have_posts()) {
 		// echo '</li>';
 
 		$description = $fields['description'];
-		$description = strlen($description) > 100 ? substr($description, 0, 100) . '...' : $description;
+		$description = strlen($description) > 300 ? substr($description, 0, 100) . '...' : $description;
 		echo '<li class="solution-list-item">';
 		echo '<div class="card solution" data-solution_categories="' . $dataSolutionCategories . '">';
 		// echo '<img src="' . $fields['icon_1']['url'] . '" alt="Product Image" class="product-image">';
@@ -125,8 +125,7 @@ wp_reset_postdata();
 	}
 
 	.product-title {
-		font-size: 1rem;
-		font-family: inherit;
+		font-size: 1rem !important;
 		margin: 0 0 10px 0;
 		text-align: center;
 		color: #333;
@@ -167,6 +166,7 @@ wp_reset_postdata();
 		justify-content: center;
 		padding: 0;
 		margin: 5px 10px;
+		margin-bottom: 5%;
 	}
 
 	.solution-categories li {
