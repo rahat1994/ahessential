@@ -59,6 +59,9 @@ if ($query->have_posts()) {
 		// echo '<p itemprop="description">' . $fields['description'] . '</p>';
 		// echo '<img src="' . $fields['icon_1']['url'] . '" />';
 		// echo '</li>';
+
+		$description = $fields['description'];
+		$description = strlen($description) > 100 ? substr($description, 0, 100) . '...' : $description;
 		echo '<li class="solution-list-item">';
 		echo '<div class="card solution" data-solution_categories="' . $dataSolutionCategories . '">';
 		// echo '<img src="' . $fields['icon_1']['url'] . '" alt="Product Image" class="product-image">';
@@ -66,7 +69,7 @@ if ($query->have_posts()) {
 		echo '<span>';
 		echo '<h2 class="product-title">' . $fields['title'] . '</h2>';
 		echo    '<ul class="product-details">';
-		echo        '<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>';
+		echo        '<li>' . $description . '</li>';
 		echo   		'<li><a class="solution-details-link" href="#">Learn More</a></li>';
 		echo    '</ul>';
 		echo  '</span>';
@@ -89,12 +92,13 @@ wp_reset_postdata();
 <style>
 	.product-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 		gap: 16px;
 		/* Adjust the gap between grid items as needed */
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		margin-top: 5%;
 	}
 
 	.card {
@@ -121,24 +125,26 @@ wp_reset_postdata();
 	}
 
 	.product-title {
-		font-size: inherit;
+		font-size: 1rem;
 		font-family: inherit;
 		margin: 0 0 10px 0;
 		text-align: center;
 		color: #333;
+
 	}
 
 	.product-details {
 		list-style: none;
 		padding: 0;
 		margin: 0 0 10px 0;
-		text-align: center;
 		color: #777;
 	}
 
 	.product-details li {
 		margin-top: 10%;
 		font-size: 14px;
+		line-height: 1rem;
+		text-align: center;
 	}
 
 	.add-to-cart {
