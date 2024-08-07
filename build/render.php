@@ -130,7 +130,6 @@ wp_reset_postdata();
 		margin: 0 0 10px 0;
 		text-align: center;
 		color: #333;
-
 	}
 
 	.product-details {
