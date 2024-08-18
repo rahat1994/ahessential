@@ -117,6 +117,7 @@ wp_reset_postdata();
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 40px;
+		margin-top: 30px;
 		padding: 0 30px 50px;
 	}
 
@@ -170,11 +171,11 @@ wp_reset_postdata();
 		/* Ensure no extra margin around the paragraph */
 	}
 
-	.is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	/* .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 		max-width: 100% !important;
 		margin-left: auto !important;
 		margin-right: auto !important;
-	}
+	} */
 
 	.solution-details-link {
 		padding: 5px 6px;
@@ -184,6 +185,12 @@ wp_reset_postdata();
 		color: #fff;
 		font-size: 14px;
 		text-align: center;
+	}
+
+	.solution-details-link:hover {
+		background-color: #fff;
+		color: #000;
+		border: 1px solid #000;
 	}
 
 	.card-content {
